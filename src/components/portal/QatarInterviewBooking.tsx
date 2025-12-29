@@ -146,7 +146,7 @@ export function QatarInterviewBooking({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           phoneNumber: phone.startsWith("254") ? phone : `254${phone.replace(/^0/, "")}`,
-          amount: 10,
+          amount: 240,
           description: "Qatar Jobs Portal Verification",
         }),
       });
@@ -592,7 +592,7 @@ export function QatarInterviewBooking({
                     <p className="text-xs text-muted-foreground flex items-center gap-2">
                       <ShieldCheck className="w-4 h-4 text-secondary" /> One-time verification
                     </p>
-                    <p className="text-base font-semibold text-foreground mt-1">10 only</p>
+                    <p className="text-base font-semibold text-foreground mt-1">240 only</p>
                     <p className="text-xs text-muted-foreground mt-2">No recurring fees. One payment unlocks scheduling.</p>
                   </div>
                   <div className="p-4 rounded-2xl border border-border/60 bg-card">
@@ -683,7 +683,7 @@ export function QatarInterviewBooking({
 
                   <div className="p-4 rounded-2xl border border-border/60 bg-muted/40">
                     <p className="text-sm text-muted-foreground">
-                      One-time verification fee: <span className="font-semibold text-foreground">10</span>.
+                      One-time verification fee: <span className="font-semibold text-foreground">240</span>.
                       You’ll get a receipt after successful payment.
                     </p>
                   </div>

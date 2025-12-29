@@ -190,7 +190,7 @@ export function QatarDashboard({ user, onLogout }: { user: any; onLogout: () => 
                   </p>
                   <div className="mt-3 flex flex-wrap gap-2">
                     <Badge className="bg-emerald-600/90 text-white">Profile submitted</Badge>
-                    <Badge className="bg-amber-500/90 text-white">Verification pending</Badge>
+                    <Badge className="bg-emerald-600/90 text-white">Application approved</Badge>
                     <Badge className="bg-muted text-muted-foreground">Interview not booked</Badge>
                   </div>
                 </div>

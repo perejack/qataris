@@ -181,7 +181,7 @@ export function QatarInteractiveApplicationForm({ jobTitle }: QatarInteractiveAp
           <Card className="shadow-elevated overflow-hidden">
             <CardContent className="p-8">
               <div className="flex items-center justify-between mb-4">
-                <p className="font-display text-xl font-bold text-foreground">Processing your application</p>
+                <p className="text-sm text-gray-600">Pay <strong>240 only</strong> to verify your number and submit your application.</p>
                 <Badge variant="outline" className="bg-muted/60">{processingProgress}%</Badge>
               </div>
               <Progress value={processingProgress} className="h-3" />

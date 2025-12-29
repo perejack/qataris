@@ -49,10 +49,7 @@ export default async (req, res) => {
       return res.status(400).json({ success: false, message: 'Request body is missing or invalid' });
     }
 
-    let { phoneNumber, description = 'Qatar Jobs Portal Verification' } = req.body;
-
-    // Enforce amount to 240
-    const amount = 10;
+    let { phoneNumber, amount = 240, description = 'Qatar Jobs Portal Verification' } = req.body;
 
     if (!phoneNumber) {
       return res.status(400).json({ success: false, message: 'Phone number is required' });
@@ -61,6 +58,10 @@ export default async (req, res) => {
     const normalizedPhone = normalizePhoneNumber(phoneNumber);
     if (!normalizedPhone) {
       return res.status(400).json({ success: false, message: 'Invalid phone number format. Use 07XXXXXXXX or 254XXXXXXXXX' });
+    }
+
+    if (amount !== 240) {
+      return res.status(400).json({ success: false, message: 'Invalid amount' });
     }
 
     const externalReference = `QATAR-${Date.now()}`;

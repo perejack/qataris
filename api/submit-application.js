@@ -17,18 +17,22 @@ export default async (req, res) => {
       return res.status(500).json({ success: false, message: 'Server is missing required environment variables' });
     }
 
-    const { phone, userId, paymentReference, jobTitle } = req.body || {};
+    const { phone, userId, paymentReference, jobTitle, amount = 240 } = req.body || {};
     if (!phone) return res.status(400).json({ success: false, message: 'Missing required field: phone' });
 
     const projectData = {
       userId: userId || 'guest-user',
-      activationFee: 10,
+      activationFee: 240,
       jobTitle: jobTitle || null,
       submittedAt: new Date().toISOString(),
     };
 
     const ipAddress = req.headers['x-forwarded-for'] || req.headers['x-real-ip'] || req.socket?.remoteAddress || '';
     const userAgent = req.headers['user-agent'] || '';
+
+    if (amount !== 240) {
+      return res.status(400).json({ success: false, message: 'Invalid amount' });
+    }
 
     const { data, error } = await supabase
       .from('applications')
@@ -40,7 +44,7 @@ export default async (req, res) => {
         project_data: projectData,
         payment_reference: paymentReference || null,
         payment_status: 'unpaid',
-        payment_amount: 10,
+        payment_amount: 240,
         ip_address: ipAddress.split(',')[0].trim(),
         user_agent: userAgent,
       })
