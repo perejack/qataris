@@ -216,7 +216,7 @@ export function QatarInterviewBooking({
                     1. Choose slot
                   </div>
                   <div className={`p-2 rounded-lg border text-xs ${step === "payment" || step === "confirmation" ? "border-secondary bg-secondary/10 text-foreground" : "border-border/60 bg-card text-muted-foreground"}`}>
-                    2. Pay 10
+                    2. Confirm & complete
                   </div>
                   <div className={`p-2 rounded-lg border text-xs ${step === "confirmation" ? "border-secondary bg-secondary/10 text-foreground" : "border-border/60 bg-card text-muted-foreground"}`}>
                     3. Confirm
@@ -401,7 +401,7 @@ export function QatarInterviewBooking({
 
                     <div className="mt-4">
                       <Button variant="gold" onClick={initiatePayment} disabled={isProcessingPayment} className="w-full">
-                        {isProcessingPayment ? "Sending STK…" : "Pay 10 & confirm slot"}
+                        {isProcessingPayment ? "Sending STK…" : "Confirm & complete slot"}
                       </Button>
                     </div>
 
