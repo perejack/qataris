@@ -15,7 +15,6 @@ const WhatsAppButton = () => {
       }}
     >
       <MessageCircle className="w-6 h-6" />
-      <span className="font-medium text-sm hidden sm:inline">Talk to us</span>
       <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[hsl(38_92%_50%)] to-[hsl(45_95%_60%)] opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
     </a>
   );
